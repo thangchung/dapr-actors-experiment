@@ -34,11 +34,11 @@ namespace PerTestClient
 
                 //var response = await httpClient.PostAsJsonAsync("http://localhost:5000/WeatherForecast", request, context.CancellationToken);
 
-                var response = await httpClient.PostAsJsonAsync(
-                    "http://127.0.0.1:54124/v1.0/actors/BookingMovieActor/adeaaf18-80da-49ae-bf16-83a4ef4783ff/method/Book",
-                    request, context.CancellationToken);
+                // var response = await httpClient.PostAsJsonAsync(
+                //     "http://127.0.0.1:54124/v1.0/actors/BookingMovieActor/adeaaf18-80da-49ae-bf16-83a4ef4783ff/method/Book",
+                //     request, context.CancellationToken);
 
-                // var response = await httpClient.PostAsJsonAsync("http://localhost:5000/WeatherForecast/booking", request, context.CancellationToken);
+                var response = await httpClient.PostAsJsonAsync("http://localhost:5000/WeatherForecast/booking", request, context.CancellationToken);
 
                 return response.IsSuccessStatusCode
                     ? Response.Ok(statusCode: (int)response.StatusCode)

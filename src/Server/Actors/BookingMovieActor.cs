@@ -25,26 +25,6 @@ namespace Server.Actors
         {
             _logger.LogInformation($"Trying to book SeatNumber={request.SeatNumber}");
 
-            // if (_state.MovieBookings.Any(x => x.SeatId == request.SeatNumber))
-            // {
-            //     _logger.LogInformation($"SeatNumber={request.SeatNumber} has already booked.");
-            // }
-            // else
-            // {
-            //     _logger.LogInformation($"UserId={request.UserId} & SeatNumber={request.SeatNumber} will be booked.");
-
-            //     _state.MovieBookings.Add(
-            //         new MovieBooking
-            //         {
-            //             SeatId = request.SeatNumber,
-            //             UserId = request.UserId,
-            //             ShowId = request.ShowId,
-            //             Status = BookStatus.Booked
-            //         });
-            // }
-
-            // return Task.CompletedTask;
-
             await _bookingService.Book(_state, request, _logger);
         }
     }
