@@ -26,3 +26,6 @@ var response = await httpClient.PostAsJsonAsync(
 ```shell
 > dotnet run
 ```
+
+# Articles
+- [Dapr with Actor model](https://dev.to/thangchung/dapr-with-actor-model-1635)
