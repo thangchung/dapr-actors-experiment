@@ -1,0 +1,35 @@
+@host = http://localhost:5000
+@actorhost = http://localhost:63336
+
+###
+POST {{host}}/booking/actor HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "a000711d-e6b9-4c6c-b4d6-d0b726103847",
+  "showId": "adeaaf18-80da-49ae-bf16-83a4ef4783ff",
+  "seatNumber": "{{$randomInt 1 2}}",
+  "price": "{{$randomInt 100 200}}"
+}
+
+###
+POST {{host}}/booking HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "a000711d-e6b9-4c6c-b4d6-d0b726103847",
+  "showId": "adeaaf18-80da-49ae-bf16-83a4ef4783ff",
+  "seatNumber": "{{$randomInt 1 2}}",
+  "price": "{{$randomInt 100 200}}"
+}
+
+###
+POST {{actorhost}}/v1.0/actors/BookingMovieActor/adeaaf18-80da-49ae-bf16-83a4ef4783ff/method/Book HTTP/1.1
+content-type: application/json
+
+{
+  "userId": "a000711d-e6b9-4c6c-b4d6-d0b726103847",
+  "showId": "adeaaf18-80da-49ae-bf16-83a4ef4783ff",
+  "seatNumber": 1,
+  "price": 100
+}

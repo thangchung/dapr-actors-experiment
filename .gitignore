@@ -353,3 +353,5 @@ MigrationBackup/
 .devcontainer/certs
 .logs
 out/
+.idea/
+src/PerTestClient/reports/

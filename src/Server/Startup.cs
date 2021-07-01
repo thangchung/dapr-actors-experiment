@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Server.Actors;
+using Server.Actors.Internals;
 
 namespace Server
 {
@@ -41,7 +42,8 @@ namespace Server
             });
 
             services.AddScoped<IBookingService, BookingService>();
-            services.AddSingleton(sp => new StorageState());
+            services.AddSingleton(sp => new NormalStorageState().InitData() as NormalStorageState);
+            services.AddSingleton(sp => new ActorStorageState().InitData() as ActorStorageState);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
